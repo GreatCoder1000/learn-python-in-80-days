@@ -98,6 +98,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
+        // Activate tab based on hash on page load
         if (window.location.hash) {
             var hash = window.location.hash;
             var tabTrigger = document.querySelector('[data-bs-target="' + hash + '"]');
@@ -106,6 +107,19 @@
                 tab.show();
             }
         }
+
+        // Update hash in URL when a tab is shown
+        var tabLinks = document.querySelectorAll('[data-bs-toggle="tab"]');
+        tabLinks.forEach(function(tabLink) {
+            tabLink.addEventListener('shown.bs.tab', function(event) {
+                var target = tabLink.getAttribute('data-bs-target');
+                if (history.replaceState) {
+                    history.replaceState(null, null, target);
+                } else {
+                    window.location.hash = target;
+                }
+            });
+        });
     });
 </script>
 </body>
