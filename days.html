@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link href="static/style.css" rel="stylesheet">
+    <title>Curriculum</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .icon-bar {
+            width: 100%;
+            background-color: #555;
+            overflow: auto;
+        }
+
+        .icon-bar a {
+            float: left;
+            width: 20%;
+            text-align: center;
+            padding: 12px 0;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 36px;
+        }
+
+        .icon-bar a:hover {
+            background-color: #000;
+        }
+
+        .active {
+            background-color: #04AA6D;
+        }
+
+        .blanklines {
+            padding-top: 72px;
+        }
+    </style>
+</head>
+<body>
+    <div class="icon-bar" style="position: fixed">
+        <a href="index.html"><i class="fa fa-home"></i></a> 
+        <a href="index.html#curriculum-tab-pane"><i class="fas fa-list-alt"></i></a> 
+        <a class="active" href="#"><i class="fa fa-terminal"></i></a> 
+    </div>
+    <div class="blanklines">
+    </div>
+    <h1 id="day1">Day 1</h1>
+    Open <code>IDLE</code>. For reference, revise <a href="index.html">write a python program</a>.<br>
+    Write <code>print("Hello World!")</code>
+    <br>
+    Now there's a bunch of things you should notice. <code>print()</code> is a <em>standard</em> function (More on that later).<br>
+    The quotes are important. Missing one of them will show an error looking something like:<br>
+    <code>
+        &gt;&gt;&gt; print("Hello World!)<br>
+        File "<python-input-0>", line 1<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;print("Hello World!)<br>
+        <span style="color:red">
+            SyntaxError: unterminated string literal (detected at line 1)
+        </span>
+    </code><br>
+    That's pretty cryptic. No worries. For now, all you have to know is to remember to quote-unquote the <code>str</code>s (Which is what text is called in python).<br>
+    In the parentheses are the <code>arguments</code> of a <code>function</code>. <code>print()</code> is a <code>function</code>, and <code>"Hello, World!"</code> is an <code>argument</code>.
+    <h1 id="day2">Day 2</h1>
+    <h2>Basics of Errors</h2>
+    By now you might have experienced an error. If you have not, try messing around with the code.<br>
+    There are many types of errors in python, and they are highlighted in red when they come up, and the program stops abruptly.<br>
+    For now, here are the most common errors you may see:<br>
+    <h3>SyntaxError</h3>
+    This happens when something is wrong with the way you have <em>written</em> the code. It could be missing a character for example.¨
+    <h4>Example</h4>
+    <code>
+        &gt;&gt;&gt; print("Welcome to the python world)<br>
+        <span style="color:red">
+            SyntaxError: unterminated string literal
+        </span>
+    </code><br>
+    <h3>NameError</h3>
+    Usually due to a typo, e.g. <code>pront</code> instead of <code>print</code>
+    <h4>Example</h4>
+    <code>
+        &gt;&gt;&gt; pront("Welcome to the python world")<br>
+        <span style="color:red">
+            NameError: name 'pront' not defined
+        </span>
+    </code><br>
+    <h3>Runtime errors</h3>
+    e.g. dividing by zero...
+    <h3>Logical errors</h3>
+    These are pretty hard to find. These are like checking if something that never actually happens...
+    <h1 id="day3">Day 3</h1>
+    <h2>Making a very simple game</h2>
+    Let's explore a simple game where each fork in the road, we can go left, straight or right.<br>
+    And one random branch in the road is a dead end.<br>
+    Lines starting with hashtags are <em>comments</em> in Python. They are not interpreted by the compiler, but they are useful to humans, especially if you come back to a program after a while away from it, or if someone else is looking at it.<br>
+    <pre style="color:#808">
+        from random import randint # IMPORT the FUNCTION <em>randint</em> from the <em>standard</em> python library called <em>random</em>.<br>
+        print("Roadtrip") # PRINT "Roadtrip"
+        no_dead_end = True # SET A VARIABLE called <em>no_dead_end</em> to <em>True</em>
+        score = 0 # SET A VARIABLE called <em>score</em> to 0
+        valid_forks = ["left", "straight", "right"] # SET A LIST OF STRINGS called valid_forks of "left", "straight", and "right"
+        
+        while no_dead_end: # REPEAT THE INDENTED CODE UNTIL no_dead_end IS <em>False</em>
+            dead_end_branch = randint(0, 2) # SET dead_end_branch TO a random number BETWEEN 0 and 2
+            chosen_fork = input("left, straight, or right? ").lower() # SET chosen_fork TO a user input CONVERTED TO lowercase
+            if chosen_fork not in valid_forks: # CHECK IF valid_forks DOESN'T CONTAIN chosen_fork
+                print("UNSUPPORTED FORK.")
+                continue # GO BACK TO THE START OF THE LOOP.
+            # IF INVALID INPUT THEN THIS WOULD NOT HAVE RUN, SO CONTINUE HERE IF VALID
+            int_fork = 1
+            if chosen_fork == "right": # IS chosen_fork EQUAL TO "right"?
+                int_fork = 2
+            elif chosen_fork == "left": # IS chosen_fork EQUAL TO "left"?
+                int_fork = 0
+            if int_fork == dead_end_branch: # IS int_fork EQUAL TO dead_end_branch?
+                print("DEADEND!") # DEAD end
+                no_dead_end = False
+            else:
+                print("You're moving on...")
+                score = score + 1 # SET score TO THE (CURRENT score) + 1
+        
+        # END OF GAME
+        print("Your score:", score)
+    </pre>
+    NOTE! Usually this many comments are not recommended, but this is for explanation purposes only.<br>
+    This is a bit complicated, but let's see each bit one-by-one.<br>
+    <h3>Imports</h3>
+    <code>from random import randint</code> imports the <code>randint</code> function from the <code>random</code> library. This allows us to generate random numbers, which is useful for our game.<br>
+    <h3>Variables</h3>
+    Variables are like boxes that hold values. In our game, we have several variables:
+    <ul>
+        <li><code>no_dead_end</code>: A boolean variable that controls the game loop. It starts as <code>True</code> and becomes <code>False</code> when the player reaches a dead end.</li>
+        <li><code>score</code>: An integer variable that keeps track of the player's score.</li>
+        <li><code>valid_forks</code>: A list of valid choices for the player to make at each fork in the road.</li>
+    </ul>
+    <h3>Loops</h3>
+    The <code>while no_dead_end:</code> loop runs as long as <code>no_dead_end</code> is <code>True</code>. Inside this loop, the player is prompted to choose a direction at each fork in the road.<br>
+    <h3>Input</h3>
+    The <code>input()</code> function is used to get input from the player. The player's choice is converted to lowercase using the <code>.lower()</code> method to ensure consistency.<br>
+    <h3>Conditionals</h3>
+    The <code>if</code> statements check the player's choice against the valid options and determine if the player has reached a dead end. If the player's choice is not valid, an error message is printed, and the loop continues to prompt for input.<br>
+    If the player chooses a valid direction, the game checks if it leads to a dead end. If it does, the game ends; otherwise, the score is incremented.<br>
+    <h3>Output</h3>
+    The final score is printed at the end of the game, giving the player feedback on their performance.<br>
+    <h2>Running the Game</h2>
+    To run the game, copy the code into IDLE, save it as a Python file (e.g., <code>roadtrip.py</code>), and run it. You can play the game by entering your choices at each fork in the road.<br>
+    This simple game demonstrates the use of variables, loops, conditionals, and input/output in Python. As you continue learning, you'll discover more advanced concepts and techniques to enhance your programming skills.<br>
+</body>
+</html> 
