@@ -152,5 +152,218 @@
     <h2>Running the Game</h2>
     To run the game, copy the code into IDLE, save it as a Python file (e.g., <code>roadtrip.py</code>), and run it. You can play the game by entering your choices at each fork in the road.<br>
     This simple game demonstrates the use of variables, loops, conditionals, and input/output in Python. As you continue learning, you'll discover more advanced concepts and techniques to enhance your programming skills.<br>
+    <h1 id="day4">Day 4</h1>
+    <h2>Variables</h2>
+    Variables are like containers that hold data. In Python, you can create a variable by assigning a value to it using the equals sign (<code>=</code>).<br>
+    <h3>Example</h3>
+    <pre>
+        name = "Alice"  # A string variable
+        age = 30        # An integer variable
+        height = 5.5    # A float variable
+        is_student = True  # A boolean variable
+        print(name, age, height, is_student)  # Output: Alice 30 5.5 True
+    </pre>
+    In this example, we create four variables: <code>name</code>, <code>age</code>, <code>height</code>, and <code>is_student</code>. We then print their values using the <code>print()</code> function.<br>
+    <h2>Data Types</h2>
+    Python has several built-in data types, including:
+    <ul>
+        <li><strong>String</strong>: A sequence of characters enclosed in quotes (e.g., "Hello, World!").</li>
+        <li><strong>Integer</strong>: A whole number (e.g., 42).</li>
+        <li><strong>Float</strong>: A number with a decimal point (e.g., 3.14).</li>
+        <li><strong>Boolean</strong>: Represents either <code>True</code> or <code>False</code>.</li>
+        <li><strong>List</strong>: An ordered collection of items (e.g., [1, 2, 3]).</li>
+        <li><strong>Tuple</strong>: An ordered, immutable collection of items (e.g., (1, 2, 3)).</li>
+        <li><strong>Dictionary</strong>: A collection of key-value pairs (e.g., {"name": "Alice", "age": 30}).</li>
+    </ul>
+    Each data type has its own characteristics and methods for manipulation. For example, you can concatenate strings, perform arithmetic operations on integers and floats, and access elements in lists and dictionaries.<br>
+    <h2>Type Conversion</h2>
+    You can convert between different data types using built-in functions like <code>int()</code>, <code>float()</code>, and <code>str()</code>. This is useful when you need to perform operations on different types of data.<br>
+    <h3>Example</h3>
+    <pre>
+        num_str = "42"  # A string representation of a number
+        num_int = int(num_str)  # Convert to integer
+        num_float = float(num_str)  # Convert to float
+        print(num_int, num_float)  # Output: 42 42.0
+    </pre>
+    In this example, we convert a string representation of a number to both an integer and a float using the <code>int()</code> and <code>float()</code> functions.<br>
+    Understanding variables, data types, and type conversion is essential for writing effective Python programs. As you continue learning, you'll explore more advanced concepts and techniques to manipulate data and create powerful applications.<br>
+    <h1 id="day5">Day 5</h1>
+    <h2>Operators</h2>
+    Operators are symbols that perform operations on variables and values. Python supports various types of operators, including arithmetic, comparison, logical, and assignment operators.<br>
+    <h3>Arithmetic Operators</h3>
+    Arithmetic operators are used to perform mathematical operations. The most common arithmetic operators in Python are:
+    <ul>
+        <li><code>+</code>: Addition</li>
+        <li><code>-</code>: Subtraction</li>
+        <li><code>*</code>: Multiplication</li>
+        <li><code>/</code>: Division (returns a float)</li>
+        <li><code>//</code>: Floor Division (returns an integer)</li>
+        <li><code>%</code>: Modulus (returns the remainder)</li>
+        <li><code>**</code>: Exponentiation (raises to a power)</li>
+    </ul>
+    <h3>Example</h3>
+    <pre>
+        a = 10
+        b = 3
+        print(a + b)  # Output: 13 (Addition)
+        print(a - b)  # Output: 7 (Subtraction)
+        print(a * b)  # Output: 30 (Multiplication)
+        print(a / b)  # Output: 3.333... (Division)
+        print(a // b) # Output: 3 (Floor Division)
+        print(a % b)  # Output: 1 (Modulus)
+        print(a ** b) # Output: 1000 (Exponentiation)
+    </pre>
+    <h3>Comparison Operators</h3>
+    Comparison operators are used to compare two values and return a boolean result (<code>True</code> or <code>False</code>). The most common comparison operators in Python are:
+    <ul>
+        <li><code>==</code>: Equal to</li>
+        <li><code>!=</code>: Not equal to</li>
+        <li><code>&gt;</code>: Greater than</li>
+        <li><code>&lt;</code>: Less than</li>
+        <li><code>&gt;=</code>: Greater than or equal to</li>
+        <li><code>&lt;=</code>: Less than or equal to</li>
+    </ul>
+    <h3>Example</h3>
+    <pre>
+        x = 5
+        y = 10
+        print(x == y)  # Output: False (Equal to)
+        print(x != y)  # Output: True (Not equal to)
+        print(x &gt; y)   # Output: False (Greater than)
+        print(x &lt; y)   # Output: True (Less than)
+        print(x &gt;= y)  # Output: False (Greater than or equal to)
+        print(x &lt;= y)  # Output: True (Less than or equal to)
+    </pre>
+    <h3>Logical Operators</h3>
+    Logical operators are used to combine conditional statements. The most common logical operators in Python are:
+    <ul>
+        <li><code>and</code>: Returns <code>True</code> if both conditions are true</li>
+        <li><code>or</code>: Returns <code>True</code> if at least one condition is true</li>
+        <li><code>not</code>: Reverses the result of a condition</li>
+    </ul>
+    <h3>Example</h3>
+    <pre>
+        a = True
+        b = False
+        print(a and b)  # Output: False (Both conditions must be true)
+        print(a or b)   # Output: True (At least one condition is true)
+        print(not a)    # Output: False (Reverses the result)
+        print(not b)    # Output: True (Reverses the result)
+    </pre>
+    <h3>Assignment Operators</h3>
+    Assignment operators are used to assign values to variables. The most common assignment operator in Python is the equals sign (<code>=</code>). However, Python also supports compound assignment operators that combine assignment with arithmetic operations: 
+    <ul>
+        <li><code>+=</code>: Add and assign</li>
+        <li><code>-=</code>: Subtract and assign</li>
+        <li><code>*=</code>: Multiply and assign</li>
+        <li><code>/=</code>: Divide and assign</li>
+        <li><code>//=</code>: Floor divide and assign</li>
+        <li><code>%=</code>: Modulus and assign</li>
+        <li><code>**=</code>: Exponentiate and assign</li>
+    </ul>
+    <h3>Example</h3>
+    <pre>
+        x = 5
+        x += 3  # Equivalent to x = x + 3
+        print(x)  # Output: 8
+        x -= 2  # Equivalent to x = x - 2
+        print(x)  # Output: 6
+        x *= 2  # Equivalent to x = x * 2
+        print(x)  # Output: 12
+        x /= 4  # Equivalent to x = x / 4
+        print(x)  # Output: 3.0
+        x //= 2  # Equivalent to x = x // 2
+        print(x)  # Output: 1.0
+        x %= 1  # Equivalent to x = x % 1
+        print(x)  # Output: 0.0
+        x **= 3  # Equivalent to x = x ** 3
+        print(x)  # Output: 0.0
+    </pre>
+    Understanding operators is crucial for performing calculations, making comparisons, and controlling the flow of your Python programs. As you continue learning, you'll explore more advanced concepts and techniques to leverage operators effectively in your code.<br>
+    <h1 id="day6">Day 6</h1>
+    <h2>Control Flow</h2>
+    Control flow refers to the order in which the statements in a program are executed. In Python, control flow is primarily managed using conditional statements and loops.<br>
+    <h3>Conditional Statements</h3>
+    Conditional statements allow you to execute different blocks of code based on certain conditions. The most common conditional statement in Python is the <code>if</code> statement, which can be combined with <code>elif</code> (else if) and <code>else</code> to create complex decision-making structures.<br>
+    <h3>Example</h3>
+    <pre>
+        age = 18
+        if age &lt; 18:
+            print("You are a minor.")
+        elif age == 18:
+            print("You are an adult.")
+        else:
+            print("You are a senior citizen.")
+    </pre>
+    In this example, the program checks the value of the <code>age</code> variable and prints a message based on the condition that is met. If <code>age</code> is less than 18, it prints "You are a minor." If <code>age</code> is equal to 18, it prints "You are an adult." Otherwise, it prints "You are a senior citizen."<br>
+    <h3>Loops</h3>
+    Loops allow you to repeat a block of code multiple times. Python supports two main types of loops: <code>for</code> loops and <code>while</code> loops.<br>
+    <h3>Example</h3>
+    <pre>
+        for i in range(5):
+            print(i)
+    </pre>
+    In this example, the <code>for</code> loop iterates over a range of numbers from 0 to 4 (inclusive) and prints each number. The <code>range(5)</code> function generates a sequence of numbers from 0 to 4.<br>
+    <h3>While Loop</h3>
+    A <code>while</code> loop continues to execute as long as a specified condition is <code>True</code>. It is useful when you don't know in advance how many times you need to iterate.<br>
+    <h3>Example</h3>
+    <pre>
+        count = 0
+        while count &lt; 5:
+            print(count)
+            count += 1
+    </pre>
+    In this example, the <code>while</code> loop continues to execute as long as <code>count</code> is less than 5. The loop prints the value of <code>count</code> and increments it by 1 in each iteration until the condition becomes <code>False</code>.<br>
+    <h3>Break and Continue Statements</h3>
+    The <code>break</code> statement is used to exit a loop prematurely, while the <code>continue</code> statement skips the current iteration and moves to the next one.<br>
+    <h3>Example</h3>
+    <pre>
+        for i in range(10):
+            if i == 5:
+                break  # Exit the loop when i is 5
+            print(i)
+        
+        for i in range(10):
+            if i % 2 == 0:
+                continue  # Skip even numbers
+            print(i)
+    </pre>
+    In the first example, the loop exits when <code>i</code> reaches 5, so it only prints numbers from 0 to 4. In the second example, the loop skips even numbers and only prints odd numbers from 0 to 9.<br>
+    Understanding control flow is essential for creating dynamic and responsive programs. By using conditional statements and loops effectively, you can build complex logic and handle various scenarios in your Python applications.<br>
+    <h1 id="day7">Day 7</h1>
+    <h2>Functions</h2>
+    Functions are reusable blocks of code that perform a specific task. They allow you to organize your code into logical units, making it easier to read, maintain, and reuse. In Python, you can define your own functions using the <code>def</code> keyword.<br>
+    <h3>Defining a Function</h3>
+    To define a function, you use the <code>def</code> keyword followed by the function name and parentheses. You can also specify parameters inside the parentheses, which are variables that the function can accept as input.<br>
+    <h3>Example</h3>
+    <pre>
+        def greet(name):
+            print("Hello, " + name + "!")
+        
+        greet("Alice")  # Output: Hello, Alice!
+        greet("Bob")    # Output: Hello, Bob!
+    </pre>
+    In this example, we define a function called <code>greet</code> that takes a parameter <code>name</code>. When we call the function with different names, it prints a personalized greeting.<br>
+    <h3>Return Statement</h3>
+    Functions can also return a value using the <code>return</code> statement. This allows you to pass data back to the caller of the function.<br>
+    <h3>Example</h3>
+    <pre>
+        def add(a, b):
+            return a + b
+        
+        result = add(3, 5)
+        print(result)  # Output: 8
+    </pre>
+    In this example, we define a function called <code>add</code> that takes two parameters <code>a</code> and <code>b</code>. The function returns the sum of the two numbers, which we then print.<br>
+    <h3>Default Parameters</h3>
+    You can also define default values for function parameters. If the caller does not provide a value for a parameter with a default value, the function will use the default value.<br>
+    <h3>Example</h3>
+    <pre>
+        def format_name(first, last, middle=''):
+            if middle:
+                return first + " " + middle + " " + last
+            else:
+                return first + " " + last
+    </pre>
 </body>
 </html> 
