@@ -11,6 +11,10 @@
             scroll-padding-top: 80px; /* more than 72px for better user experience */
         }
 
+        h1 {
+            margin-top: 24px;
+        }
+
         body {
             margin: 0;
         }
@@ -365,5 +369,238 @@
             else:
                 return first + " " + last
     </pre>
+    <h1 id="day8">Day 8</h1>
+    <h2>Lists and List Operations</h2>
+    Lists are one of the most versatile data structures in Python. They allow you to store multiple items in a single variable.<br>
+    <h3>Creating a List</h3>
+    <pre>
+        fruits = ["apple", "banana", "cherry"]
+        print(fruits)  # Output: ['apple', 'banana', 'cherry']
+    </pre>
+    <h3>Accessing List Elements</h3>
+    <pre>
+        print(fruits[0])  # Output: apple
+        print(fruits[-1]) # Output: cherry
+    </pre>
+    <h3>Modifying Lists</h3>
+    <pre>
+        fruits.append("orange")  # Add to end
+        fruits[1] = "blueberry"  # Change value
+        print(fruits)  # Output: ['apple', 'blueberry', 'cherry', 'orange']
+    </pre>
+    <h3>Iterating Over a List</h3>
+    <pre>
+        for fruit in fruits:
+            print(fruit)
+    </pre>
+    <h3>List Methods</h3>
+    <ul>
+        <li><code>append()</code>: Add an item to the end</li>
+        <li><code>insert()</code>: Insert at a specific position</li>
+        <li><code>remove()</code>: Remove a specific item</li>
+        <li><code>pop()</code>: Remove and return an item</li>
+        <li><code>sort()</code>: Sort the list</li>
+        <li><code>reverse()</code>: Reverse the list</li>
+    </ul>
+    <h1 id="day9">Day 9</h1>
+    <h2>Dictionaries</h2>
+    Dictionaries store data as key-value pairs. They are useful for when you want to associate a value with a specific key.<br>
+    <h3>Creating a Dictionary</h3>
+    <pre>
+        person = {"name": "Alice", "age": 30, "city": "New York"}
+        print(person["name"])  # Output: Alice
+    </pre>
+    <h3>Adding and Modifying Entries</h3>
+    <pre>
+        person["email"] = "alice@example.com"
+        person["age"] = 31
+        print(person)
+    </pre>
+    <h3>Iterating Over a Dictionary</h3>
+    <pre>
+        for key, value in person.items():
+            print(key, value)
+    </pre>
+    <h3>Dictionary Methods</h3>
+    <ul>
+        <li><code>keys()</code>: Returns all keys</li>
+        <li><code>values()</code>: Returns all values</li>
+        <li><code>items()</code>: Returns all key-value pairs</li>
+        <li><code>get()</code>: Returns the value for a key</li>
+        <li><code>pop()</code>: Removes a key-value pair</li>
+    </ul>
+    <h1 id="day10">Day 10</h1>
+    <h2>Tuples and Sets</h2>
+    <h3>Tuples</h3>
+    Tuples are like lists, but they are immutable (cannot be changed).
+    <pre>
+        coordinates = (10, 20)
+        print(coordinates[0])  # Output: 10
+    </pre>
+    <h3>Sets</h3>
+    Sets are unordered collections of unique elements.
+    <pre>
+        numbers = {1, 2, 3, 2, 1}
+        print(numbers)  # Output: {1, 2, 3}
+    </pre>
+    <h3>Set Operations</h3>
+    <pre>
+        a = {1, 2, 3}
+        b = {3, 4, 5}
+        print(a | b)  # Union: {1, 2, 3, 4, 5}
+        print(a & b)  # Intersection: {3}
+        print(a - b)  # Difference: {1, 2}
+    </pre>
+    <h1 id="day11">Day 11</h1>
+    <h2>Scope</h2>
+    Scope refers to the visibility and lifetime of variables in a program. In Python, there are two main types of scope: local and global.<br>
+    <h3>Local Scope</h3>
+    Variables defined inside a function have local scope, meaning they are only accessible within that function.<br>
+    <h3>Example</h3>
+    <pre>
+        def my_function():
+            local_var = "I am local"
+            print(local_var)  # Output: I am local
+        
+        my_function()
+        # print(local_var)  # This would raise an error because local_var is not defined outside the function
+    </pre>
+    <h3>Global Scope</h3>
+    Variables defined outside of any function have global scope, meaning they can be accessed from anywhere in the program.<br>
+    <h3>Example</h3>
+    <pre>
+        global_var = "I am global"
+        
+        def another_function():
+            print(global_var)  # Output: I am global
+        
+        another_function()
+        print(global_var)  # Output: I am global
+    </pre>
+    <h3>Global Keyword</h3>
+    You can use the <code>global</code> keyword to modify a global variable inside a function.<br>
+    <h3>Example</h3>
+    <pre>
+        count = 0
+        
+        def increment():
+            global count
+            count += 1
+        
+        increment()
+        print(count)  # Output: 1
+    </pre>
+    If you forget to write <code>global</code>, then print(count) will show 0, the unincremented count.
+    <h1 id="day12">Day 12</h1>
+    <h2>Modules and Packages</h2>
+    Modules are files containing Python code that can be imported into other Python programs. They allow you to organize your code into reusable components.<br>
+    <h3>Creating a Module</h3>
+    To create a module, simply create a Python file with a <code>.py</code> extension. You can define functions, classes, and variables in this file.<br>
+    <h3>Example</h3>
+    <pre>
+        # my_module.py
+        def greet(name):
+            return "Hello, " + name + "!"
+        def add(a, b):
+            return a + b
+    </pre>
+    <h3>Importing a Module</h3>
+    You can import a module using the <code>import</code> statement. You can then access the functions and variables defined in the module.<br>
+    <h3>Example</h3>
+    <pre>
+        import my_module
+        
+        print(my_module.greet("Alice"))  # Output: Hello, Alice!
+        print(my_module.add(3, 5))        # Output: 8
+    </pre>
+    <h3>Importing Specific Functions</h3>
+    You can also import specific functions from a module using the <code>from</code> keyword.<br>
+    <h3>Example</h3>
+    <pre>
+        from my_module import greet
+        
+        print(greet("Bob"))  # Output: Hello, Bob!
+    </pre>
+    <h3>Packages</h3>
+    Packages are a way to organize related modules into a directory hierarchy. A package is simply a directory containing an <code>__init__.py</code> file.<br>
+    <h3>Example</h3>
+    <pre>
+        my_package/
+        ├── __init__.py
+        ├── module1.py
+        └── module2.py
+    </pre>
+    You can import modules from a package using the dot notation.<br>
+    <h3>Example</h3>
+    <pre>
+        from my_package import module1, module2
+        
+        print(module1.some_function())
+        print(module2.another_function())
+    </pre>
+    <h1 id="day13">Day 13</h1>
+    <h2>File Handling</h2>
+    File handling in Python allows you to read from and write to files on your computer. This is useful for storing data, logging information, or processing large datasets.<br>
+    <h3>Opening a File</h3>
+    You can open a file using the <code>open()</code> function. The first argument is the file name, and the second argument specifies the mode (e.g., read, write, append).<br>
+    <h3>Example</h3>
+    <pre>
+        file = open("example.txt", "r")  # Open a file for reading
+        content = file.read()  # Read the entire file content
+        print(content)
+        file.close()  # Close the file
+    </pre>
+    <h3>Reading from a File</h3>
+    You can read the contents of a file using methods like <code>read()</code>, <code>readline()</code>, or <code>readlines()</code>.<br>
+    <h3>Example</h3>
+    <pre>
+        file = open("example.txt", "r")
+        line = file.readline()  # Read a single line
+        print(line)
+        lines = file.readlines()  # Read all lines into a list
+        print(lines)
+        file.close()
+    </pre>
+    <h3>Writing to a File</h3>
+    You can write to a file using the <code>write()</code> or <code>writelines()</code> methods. Make sure to open the file in write mode ("w") or append mode ("a").<br>
+    <h3>Example</h3>
+    <pre>
+        file = open("output.txt", "w")  # Open a file for writing
+        file.write("Hello, World!\n")  # Write a string to the file
+        file.writelines(["Line 1\n", "Line 2\n"])  # Write multiple lines
+        file.close()  # Close the file
+    </pre>
+    <h3>Using Context Managers</h3>
+    It's a good practice to use context managers (the <code>with</code> statement) when working with files. This ensures that the file is properly closed, even if an error occurs.<br>
+    <h3>Example</h3>
+    <pre>
+        with open("example.txt", "r") as file:
+            content = file.read()
+            print(content)
+        # No need to explicitly close the file
+        with open("output.txt", "w") as file:
+            file.write("This is a new file.\n")
+            file.writelines(["Line A\n", "Line B\n"])
+    </pre>
+    File handling is an essential skill for any programmer, as it allows you to work with data stored in files. By mastering file handling in Python, you can create applications that read, write, and manipulate data efficiently.<br>
+    <h1 id="day14">Day 14</h1>
+    <h2>Exception Handling</h2>
+    Exception handling in Python allows you to gracefully handle errors and exceptions that may occur during the execution of your program. This is important for maintaining the stability and reliability of your code.<br>
+    <h3>Try and Except Blocks</h3>
+    You can use <code>try</code> and <code>except</code> blocks to catch exceptions and handle them appropriately. The code inside the <code>try</code> block is executed, and if an exception occurs, the control is transferred to the corresponding <code>except</code> block.<br>
+    <h3>Example</h3>
+    <pre>
+        try:
+            result = 10 / 0  # This will raise a ZeroDivisionError
+        except ZeroDivisionError:
+            print("Cannot divide by zero!")
+        except Exception as e:
+            print("An error occurred:", e)
+    </pre>
+    In this example, we attempt to divide by zero, which raises a <code>ZeroDivisionError</code>. The corresponding <code>except</code> block catches the exception and prints an error message.<br>
+    <h3>Multiple Except Blocks</h3>
+    You can have multiple <code>except</code> blocks to handle different types of exceptions. This allows you to provide specific error handling for each type of exception.<br>
+    <h3>Example</h3>
+    <snip>coming soon...</snip>
 </body>
-</html> 
+</html>
